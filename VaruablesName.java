@@ -54,9 +54,7 @@ public class VaruablesName {
     }
 
 
-    // Лабораторная работа какого то студента https://github.com/BogdanIancu/Java2020/blob/master/Lab1/src/Student.java
-
-
+    // Код взят отсюда
 
     public class Student {
         private String name; -  private String studentName;
