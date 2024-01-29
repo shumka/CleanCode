@@ -54,15 +54,27 @@ public class VaruablesName {
     }
 
 
+    // Лабораторная работа какого то студента https://github.com/BogdanIancu/Java2020/blob/master/Lab1/src/Student.java
 
 
 
+    public class Student {
+        private String name; -  private String studentName;
+        private float grade; -  private float studentGrade;
 
+        public Student() {
+            name = ""; - studentName = "";
+            grade = 0; - studentGrade = 0;
+        }
 
+        public Student(String studentName, float studentGrade) {
+            this.studentName = studentName; -
+            this.studentGrade = studentGrade;
+        }
 
+        // Дальше идут геттеры и сеттеры в них используются данные переменные
 
-
-
+    }
 
 
 
