@@ -62,23 +62,23 @@ public class MetalSmeltingProcess {
         meltingTemperatureC.put(ALUMINIUM_BRONZE, 1038.0);
         meltingTemperatureC.put(PEWTER, 232.0);
 
-        meltingTimesMinutes.put(IRON, 10); // в минутах
-        meltingTimesMinutes.put(COPPER, 15); // в минутах
-        meltingTimesMinutes.put(ALUMINUM, 5); // в минутах
-        meltingTimesMinutes.put(GOLD, 20); // в минутах
-        meltingTimesMinutes.put(SILVER, 25); // в минутах
-        meltingTimesMinutes.put(PLATINUM, 30); // в минутах
-        meltingTimesMinutes.put(TITANIUM, 15); // в минутах
-        meltingTimesMinutes.put(ZINC, 8); // в минутах
-        meltingTimesMinutes.put(NICKEL, 12); // в минутах
-        meltingTimesMinutes.put(LEAD, 6); // в минутах
-        meltingTimesMinutes.put(TIN, 4); // в минутах
-        meltingTimesMinutes.put(BRONZE, 18); // в минутах
-        meltingTimesMinutes.put(BRASS, 16); // в минутах
-        meltingTimesMinutes.put(STEEL, 22); // в минутах
-        meltingTimesMinutes.put(CHROME, 28); // в минутах
-        meltingTimesMinutes.put(ALUMINIUM_BRONZE, 17); // в минутах
-        meltingTimesMinutes.put(PEWTER, 8); // в минутах
+        meltingTimesMinutes.put(IRON, 10);
+        meltingTimesMinutes.put(COPPER, 15);
+        meltingTimesMinutes.put(ALUMINUM, 5);
+        meltingTimesMinutes.put(GOLD, 20);
+        meltingTimesMinutes.put(SILVER, 25);
+        meltingTimesMinutes.put(PLATINUM, 30);
+        meltingTimesMinutes.put(TITANIUM, 15);
+        meltingTimesMinutes.put(ZINC, 8);
+        meltingTimesMinutes.put(NICKEL, 12);
+        meltingTimesMinutes.put(LEAD, 6);
+        meltingTimesMinutes.put(TIN, 4);
+        meltingTimesMinutes.put(BRONZE, 18);
+        meltingTimesMinutes.put(BRASS, 16);
+        meltingTimesMinutes.put(STEEL, 22);
+        meltingTimesMinutes.put(CHROME, 28);
+        meltingTimesMinutes.put(ALUMINIUM_BRONZE, 17);
+        meltingTimesMinutes.put(PEWTER, 8);
     }
 
     public static void main(String[] args) {
