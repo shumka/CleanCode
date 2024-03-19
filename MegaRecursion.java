@@ -64,22 +64,22 @@ public class MegaRecursion {
     }
 
     public static int sevenRecursion(int[] arr) {
-        return sevenRecursion(arr, arr.length, Integer.MIN_VALUE, Integer.MIN_VALUE);
+        return sevenRecursion(arr, 0, arr[0], arr[1]);
     }
 
     private static int sevenRecursion(int[] arr, int n, int max, int secondMax) {
-        if (n == 0) {
+        if (n == arr.length) {
             return secondMax;
         }
 
-        if (arr[n-1] > max) {
+        if (arr[n] > max) {
             secondMax = max;
-            max = arr[n-1];
-        } else if (arr[n-1] > secondMax && arr[n-1] < max) {
-            secondMax = arr[n-1];
+            max = arr[n];
+        } else if (arr[n] > secondMax && arr[n] < max) {
+            secondMax = arr[n];
         }
 
-        return sevenRecursion(arr, n-1, max, secondMax);
+        return sevenRecursion(arr, n+1, max, secondMax);
     }
 
     public static List<String> eightRecursion(String directoryPath) {
@@ -119,5 +119,7 @@ public class MegaRecursion {
             generateHard(result, s + ")", left, right - 1);
         }
     }
+
+
 
 }
