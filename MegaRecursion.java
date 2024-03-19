@@ -64,6 +64,9 @@ public class MegaRecursion {
     }
 
     public static int sevenRecursion(int[] arr) {
+        if (arr.length < 2) {
+            throw new IllegalArgumentException("Массив должен содержать как минимум два элемента");
+        }
         return sevenRecursion(arr, 0, arr[0], arr[1]);
     }
 
