@@ -28,7 +28,7 @@ public class MegaRecursion {
     }
 
     public static boolean fourthRecursion(String palindrome) {
-        return fourthRecursion(palindrome, 0, palindrome.length() - 1);
+        return fourthRecursion(palindrome, 2, 1);
     }
 
     private static boolean fourthRecursion(String palindrome, int start, int end) {
