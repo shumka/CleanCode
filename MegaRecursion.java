@@ -67,7 +67,9 @@ public class MegaRecursion {
         if (arr.length < 2) {
             throw new IllegalArgumentException("Массив должен содержать как минимум два элемента");
         }
-        return sevenRecursion(arr, 0, arr[0], arr[1]);
+        int max = Math.max(arr[0], arr[1]);
+        int secondMax = Math.min(arr[0], arr[1]);
+        return sevenRecursion(arr, 2, max, secondMax);
     }
 
     private static int sevenRecursion(int[] arr, int n, int max, int secondMax) {
@@ -123,6 +125,16 @@ public class MegaRecursion {
         }
     }
 
+    public static void main(String[] args) {
+        int[] arr1 = {3, 7, 1, 4, 5};
+        int[] arr2 = {9, 8, 6, 5, 7};
 
+        try {
+            System.out.println("Второй максимальный элемент в массиве arr1: " + sevenRecursion(arr1));
+            System.out.println("Второй максимальный элемент в массиве arr2: " + sevenRecursion(arr2));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+    }
 
 }
