@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
+
 
 public class MegaRecursion {
 
@@ -25,31 +27,97 @@ public class MegaRecursion {
         return 1 + listLength(list);
     }
 
-    // 4. Проверка, является ли строка палиндромом
-    public static boolean isPalindrome(String str) {
-        if (str.length() <= 1)
+    public static boolean fourthRecursion(String palindrome) {
+        return fourthRecursion(palindrome, 0, palindrome.length() - 1);
+    }
+
+    private static boolean fourthRecursion(String palindrome, int start, int end) {
+        if (start >= end)
             return true;
-        if (str.charAt(0) != str.charAt(str.length() - 1))
+        if (palindrome.charAt(start) != palindrome.charAt(end))
             return false;
-        return isPalindrome(str.substring(1, str.length() - 1));
+        return fourthRecursion(palindrome, start + 1, end - 1);
     }
 
-    // 5. Печать только чётных значений из списка
-    public static void printEvenValues(List<Integer> list) {
-        if (list.isEmpty())
+    public static void fiveRecursion(List<Integer> list){
+        fiveRecursion(list, 0);
+    }
+    private static void fiveRecursion(List<Integer> list, int index) {
+        if (index == list.size()) {
             return;
-        int value = list.get(0);
-        if (value % 2 == 0)
-            System.out.println(value);
-        printEvenValues(list.subList(1, list.size()));
+        }
+        if (list.get(index) % 2 == 0) {
+            System.out.println(list.get(index));
+        }
+        fiveRecursion(list, index + 1);
     }
 
-    // 6. Печать элементов списка с чётными индексами
-    public static void printElemEvenIndex(List<Integer> list, int index) {
-        if (index >= list.size())
+    public static void sixRecursion(List<Integer> list){
+        sixRecursion(list, 0);
+    }
+    private static void sixRecursion(List<Integer> list, int index) {
+        if (index >= list.size()) {
             return;
+        }
         System.out.println(list.get(index));
-        printElemEvenIndex(list, index + 2);
+        sixRecursion(list, index + 2);
+    }
+
+    public static int sevenRecursion(int[] arr) {
+        return sevenRecursion(arr, arr.length, Integer.MIN_VALUE, Integer.MIN_VALUE);
+    }
+
+    private static int sevenRecursion(int[] arr, int n, int max, int secondMax) {
+        if (n == 0) {
+            return secondMax;
+        }
+
+        if (arr[n-1] > max) {
+            secondMax = max;
+            max = arr[n-1];
+        } else if (arr[n-1] > secondMax && arr[n-1] < max) {
+            secondMax = arr[n-1];
+        }
+
+        return sevenRecursion(arr, n-1, max, secondMax);
+    }
+
+    public static List<String> eightRecursion(String directoryPath) {
+        List<String> fileList = new ArrayList<>();
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    fileList.add(file.getAbsolutePath());
+                } else if (file.isDirectory()) {
+                    fileList.addAll(eightRecursion(file.getAbsolutePath()));
+                }
+            }
+        }
+        return fileList;
+    }
+
+    public static List<String> hardRecursion(int n) {
+        List<String> result = new ArrayList<>();
+        generateHard(result, "", n, n);
+        return result;
+    }
+
+    public static void generateHard(List<String> result, String s, int left, int right) {
+        if (left == 0 && right == 0) {
+            result.add(s);
+            return;
+        }
+
+        if (left > 0) {
+            generateHard(result, s + "(", left - 1, right);
+        }
+
+        if (right > left) {
+            generateHard(result, s + ")", left, right - 1);
+        }
     }
 
 }
